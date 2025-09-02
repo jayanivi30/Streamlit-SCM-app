@@ -1,5 +1,0 @@
-material,current_stock,safety_stock,avg_daily_usage,primary_supplier,backup_supplier,lead_time_days
-Flour,80,100,20,Supplier B,Supplier A,5
-Edible Oil,200,150,25,Supplier A,Supplier C,3
-Sugar,120,80,15,Supplier C,Supplier A,4
-Yeast,40,60,8,Supplier B,Supplier D,5
