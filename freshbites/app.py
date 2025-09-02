@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 import altair as alt
 
+suppliers = pd.read_csv("suppliers.csv")
+inventory = pd.read_csv("inventory.csv")
+
 st.set_page_config(page_title="FreshBites – Supply Health", page_icon="🍞", layout="wide")
 
 @st.cache_data
