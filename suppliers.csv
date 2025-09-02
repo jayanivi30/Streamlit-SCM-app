@@ -1,5 +1,0 @@
-supplier_id,supplier_name,total_deliveries,on_time_deliveries,avg_lead_time_days,price_index,priority,is_backup
-S1,Supplier A,20,18,3,1.00,1,False
-S2,Supplier B,18,12,5,0.95,2,False
-S3,Supplier C,12,9,4,1.05,3,True
-S4,Supplier D,10,7,6,0.90,4,True
