@@ -1,0 +1,6 @@
+Requirements:
+Streamlit 
+pandas 
+numpy
+altair
+scikit-learn
