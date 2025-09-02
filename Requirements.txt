@@ -1,2 +1,0 @@
-Requirements:
-Python packages: Streamlit, pandas, numpy
