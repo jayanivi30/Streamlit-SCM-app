@@ -74,7 +74,17 @@ inv["lead_time_days"] = np.where(inv["lead_time_days"].isna() | (inv["lead_time_
 # Health metrics
 inv["days_of_cover"] = (inv["current_stock"] / inv["avg_daily_usage"]).replace([np.inf, -np.inf], np.nan).fillna(0.0)
 inv["reorder_point"] = inv["safety_stock"] + inv["lead_time_days"] * inv["avg_daily_usage"]
+# Ensure numeric values
+inv["reorder_point"] = pd.to_numeric(inv["reorder_point"], errors="coerce")
+inv["current_stock"] = pd.to_numeric(inv["current_stock"], errors="coerce")
+
+# Fill NaNs (in case of invalid/missing values)
+inv["reorder_point"].fillna(0, inplace=True)
+inv["current_stock"].fillna(0, inplace=True)
+
+# Calculate reorder quantity
 inv["reorder_qty"] = (inv["reorder_point"] - inv["current_stock"]).clip(lower=0).round(0).astype(int)
+
 
 # Risk rules
 inv["stock_risk"] = np.where(inv["current_stock"] < inv["safety_stock"], "Low Stock", "OK")
